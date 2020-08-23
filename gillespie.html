@@ -1,0 +1,21 @@
+
+<html lang="it" dir="ltr">
+<head>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:300,700|Source+Code+Pro&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="biophys.css">
+</head>
+<body>
+<div id='plot'></div>
+<div id='plot_2'></div>
+<div class="control">
+		<div> On/Off </div>
+		<label class="switch">
+			<input type="checkbox" id="onoff" onclick='changeOnOff()'>
+			<span class="selector"></span>
+		</label>
+	</div>
+<script src='gillespie.js'>
+</script>
+</body>
+</html>

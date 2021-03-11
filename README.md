@@ -1,2 +1,8 @@
 # CarloGiorgio.github.io
-## Interactive Gillespie Algorithm simulation
+## Funtionality 
+In order to use the HTML file you should put on your browser
+<code>
+  http://carlogiorgio.github.io/repository/namefile
+  </code>
+  
+

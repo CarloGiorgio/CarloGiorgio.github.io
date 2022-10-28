@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>-->
+    <script src="plotly-latest.min.js"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    </head>
+
+    <body>
+        <h1>Funzioni per Mario</h1>
+        <div id="graph"></div>
+        <div> Ampiezza dell'intervallo: <span id="epsilon_label">0.1</span></div>
+        <div><input type="range" id="base_slider" oninput="changeEpsilon(this.value)" min="1"  max="2000" value="4000"></div>
+        <!--
+        <div> On/Off </div>
+        <div>
+            <input type="checkbox" id="onoff" onclick="changeOnOff()">
+            <span></span>
+        </div>
+        -->
+        <div>
+        An estimate of N0:<span id="debugger"></span>
+    </div>
+    <div id="hist"></div>
+    <script src="prova.js"></script>
+</body></html>

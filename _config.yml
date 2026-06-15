@@ -1,12 +1,12 @@
-title: Carlo in Africa
-description: Travel updates — text and photos, day by day.
+title: Tanzania Diaries
+description: Travel updates from Arusha — text and photos, day by day.
 author: Carlo Giorgetti
 
 # URLs like /2026/06/15/first-day/
 permalink: /:year/:month/:day/:title/
 
 markdown: kramdown
-timezone: Africa/Nairobi
+timezone: Africa/Dar_es_Salaam
 
 # Don't let Jekyll process these
 exclude:

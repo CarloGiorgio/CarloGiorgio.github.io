@@ -1,0 +1,31 @@
+---
+layout: default
+---
+{% assign days = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m-%d'" %}
+
+{% for day in days %}
+<section class="day">
+  <h2 class="day-heading">{{ day.items[0].date | date: "%-d %B %Y" }}</h2>
+  <ul class="post-list">
+    {% for post in day.items %}
+    <li class="card">
+      <a class="card-link" href="{{ post.url | relative_url }}">
+        {% if post.cover %}
+        <img class="card-cover" src="{{ post.cover | relative_url }}" alt="" loading="lazy">
+        {% endif %}
+        <div class="card-text">
+          {% if post.author %}<span class="badge badge-{{ post.author | slugify }}">{{ post.author }}</span>{% endif %}
+          <h3 class="card-title">{{ post.title }}</h3>
+          {% if post.location %}<p class="card-meta">{{ post.location }}</p>{% endif %}
+          <p class="card-excerpt">{{ post.content | strip_html | truncatewords: 30 }}</p>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}
+
+{% if site.posts.size == 0 %}
+<p class="empty">No posts yet. <a href="{{ '/admin/' | relative_url }}">Write the first one →</a></p>
+{% endif %}

@@ -1,0 +1,42 @@
+backend:
+  name: github
+  repo: CarloGiorgio/CarloGiorgio.github.io
+  branch: master
+  # OAuth proxy URL — REPLACE after you deploy the Cloudflare Worker (see oauth-worker/README.md)
+  base_url: https://REPLACE-WITH-YOUR-WORKER.workers.dev
+
+# Where uploaded photos are stored / how they're referenced on the site
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+# Save drafts as you go without publishing live
+publish_mode: editorial_workflow
+
+# Show a "Preview" pane while writing
+locale: "en"
+
+collections:
+  - name: "posts"
+    label: "Travel day"
+    label_singular: "Travel day"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{date | date('D MMM YYYY')}}"
+    fields:
+      - label: "Who's writing?"
+        name: "author"
+        widget: "select"
+        options: ["Carlo", "Friend"]   # rename "Friend" to your travel mate's name
+        hint: "Pick yourself — this badges the post"
+      - { label: "Title", name: "title", widget: "string", hint: "e.g. Arrival in Nairobi" }
+      - { label: "Date", name: "date", widget: "datetime", default: "" }
+      - { label: "Location", name: "location", widget: "string", required: false, hint: "e.g. Nairobi, Kenya" }
+      - { label: "Cover photo", name: "cover", widget: "image", required: false, hint: "Big photo at the top" }
+      - { label: "Story", name: "body", widget: "markdown", hint: "Write your day here" }
+      - label: "Photo gallery"
+        name: "gallery"
+        widget: "list"
+        required: false
+        summary: "{{fields.image}}"
+        field: { label: "Photo", name: "image", widget: "image" }

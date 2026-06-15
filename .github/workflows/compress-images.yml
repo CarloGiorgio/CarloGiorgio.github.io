@@ -1,0 +1,28 @@
+name: Compress images
+
+# Runs after you publish a post with photos. Shrinks any new/changed
+# images in assets/uploads so the site loads fast on slow mobile data.
+on:
+  push:
+    branches: [master]
+    paths:
+      - "assets/uploads/**"
+
+permissions:
+  contents: write
+
+jobs:
+  compress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compress images
+        uses: calibreapp/image-actions@main
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          compressOnly: true
+          # Resize huge phone photos down to a sensible web width
+          jpegQuality: "80"
+          pngQuality: "80"
+          webpQuality: "80"
+          ignorePaths: "node_modules/**"

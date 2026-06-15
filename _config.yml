@@ -1,0 +1,19 @@
+title: Carlo in Africa
+description: Travel updates — text and photos, day by day.
+author: Carlo Giorgetti
+
+# URLs like /2026/06/15/first-day/
+permalink: /:year/:month/:day/:title/
+
+markdown: kramdown
+timezone: Africa/Nairobi
+
+# Don't let Jekyll process these
+exclude:
+  - README.md
+  - mario/
+  - .github/
+  - oauth-worker/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock

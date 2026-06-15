@@ -1,0 +1,134 @@
+:root {
+  --accent: #c2410c;
+  --bg: #faf8f5;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e7e2db;
+  --maxw: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--accent); }
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header */
+.site-header {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 28px 16px 8px;
+}
+.site-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.site-tagline { color: var(--muted); margin: 4px 0 0; font-size: 0.95rem; }
+
+/* Home list */
+.post-list { list-style: none; padding: 0; margin: 20px 0; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.card-link { text-decoration: none; color: inherit; display: block; }
+.card-cover { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.card-text { padding: 14px 16px 18px; }
+.card-title { margin: 0 0 4px; font-size: 1.25rem; line-height: 1.25; }
+.card-meta { margin: 0 0 8px; color: var(--muted); font-size: 0.85rem; }
+.card-excerpt { margin: 0; color: var(--text); }
+
+.empty { text-align: center; color: var(--muted); margin: 60px 0; }
+
+/* Day grouping (two perspectives per day) */
+.day { margin: 28px 0; }
+.day-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+/* Author badge — add a colour for each travel mate's name (slugified) */
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: var(--muted);
+  padding: 3px 9px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+.badge-carlo  { background: #c2410c; }  /* orange */
+.badge-friend { background: #0e7490; }  /* teal — rename to match your mate */
+
+/* Post */
+.post { padding: 8px 0 24px; }
+.post-title { font-size: 1.8rem; line-height: 1.2; margin: 12px 0 6px; letter-spacing: -0.02em; }
+.post-meta { color: var(--muted); margin: 0 0 18px; font-size: 0.9rem; }
+.post-cover { width: 100%; border-radius: 14px; margin-bottom: 20px; }
+.post-body { font-size: 1.05rem; }
+.post-body img { border-radius: 12px; margin: 16px 0; }
+.post-body h2 { margin-top: 1.6em; }
+.post-body blockquote {
+  border-left: 3px solid var(--accent);
+  margin: 16px 0; padding: 4px 0 4px 16px; color: var(--muted);
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin: 24px 0;
+}
+.gallery img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 10px; }
+@media (min-width: 540px) {
+  .gallery { grid-template-columns: repeat(3, 1fr); }
+}
+
+.post-nav { margin-top: 28px; }
+.post-nav a { text-decoration: none; font-weight: 600; }
+
+/* Footer */
+.site-footer {
+  max-width: var(--maxw);
+  margin: 40px auto 30px;
+  padding: 20px 16px 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}

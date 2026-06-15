@@ -2,8 +2,8 @@ backend:
   name: github
   repo: CarloGiorgio/CarloGiorgio.github.io
   branch: master
-  # OAuth proxy URL — REPLACE after you deploy the Cloudflare Worker (see oauth-worker/README.md)
-  base_url: https://REPLACE-WITH-YOUR-WORKER.workers.dev
+  # OAuth proxy (Cloudflare Worker)
+  base_url: https://carlo-cms-oauth.carlogiorgio.workers.dev
 
 # Where uploaded photos are stored / how they're referenced on the site
 media_folder: "assets/uploads"

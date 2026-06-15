@@ -92,7 +92,7 @@ a { color: var(--accent); }
   margin-bottom: 8px;
 }
 .badge-carlo  { background: #c2410c; }  /* orange */
-.badge-friend { background: #0e7490; }  /* teal — rename to match your mate */
+.badge-andrea { background: #0e7490; }  /* teal */
 
 /* Post */
 .post { padding: 8px 0 24px; }

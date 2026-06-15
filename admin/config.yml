@@ -27,7 +27,7 @@ collections:
       - label: "Who's writing?"
         name: "author"
         widget: "select"
-        options: ["Carlo", "Friend"]   # rename "Friend" to your travel mate's name
+        options: ["Carlo", "Andrea"]
         hint: "Pick yourself — this badges the post"
       - { label: "Title", name: "title", widget: "string", hint: "e.g. Arrival in Nairobi" }
       - { label: "Date", name: "date", widget: "datetime", default: "" }

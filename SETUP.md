@@ -56,9 +56,8 @@ editor; who wrote what comes from the **"Who's writing?"** picker, not GitHub.
 (Heads-up: on his phone he's signed into your GitHub. Fine for this repo. If you
 prefer, make a separate throwaway GitHub account just for the blog and use that.)
 
-Rename the second author from `Friend` to his real name in two places:
-- `admin/config.yml` → `options: ["Carlo", "Friend"]`
-- `assets/css/style.css` → `.badge-friend` (the slug must match the name, lowercased)
+Authors are already set to **Carlo** and **Andrea** (`admin/config.yml`,
+`assets/css/style.css` → `.badge-andrea`).
 
 ## 5. Turn on GitHub Pages (if not already)
 

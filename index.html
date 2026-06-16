@@ -1,10 +1,63 @@
 ---
 layout: default
 ---
+<section class="intro">
+  <h1 class="intro-title">Karibu! 👋</h1>
+  <p class="intro-lead">We're <strong>Carlo</strong> and <strong>Andrea</strong> — two friends travelling through Tanzania. This is our shared diary: a bit of writing and a few photos each day, so family and friends can follow along.</p>
+  <div class="intro-who">
+    <div class="intro-card intro-carlo">
+      <span class="badge badge-carlo">Carlo</span>
+      <p>Add a line about yourself here — where you're from, what you're into, why this trip.</p>
+    </div>
+    <div class="intro-card intro-andrea">
+      <span class="badge badge-andrea">Andrea</span>
+      <p>Andrea, add your intro here — a sentence or two so readers know who's writing.</p>
+    </div>
+  </div>
+</section>
+
+{% assign latest_carlo = site.posts | where_exp: "p", "p.author == 'Carlo'" | first %}
+{% assign latest_andrea = site.posts | where_exp: "p", "p.author == 'Andrea'" | first %}
+
+{% if latest_carlo or latest_andrea %}
+<section class="latest">
+  <h2 class="section-heading">Latest news</h2>
+  <div class="latest-grid">
+    {% if latest_carlo %}
+    <a class="latest-card latest-carlo" href="{{ latest_carlo.url | relative_url }}">
+      <span class="badge badge-carlo">Carlo</span>
+      <h3 class="latest-title">{{ latest_carlo.title }}</h3>
+      <p class="latest-when">{{ latest_carlo.date | date: "%-d %B %Y" }}{% if latest_carlo.location %} · {{ latest_carlo.location }}{% endif %}</p>
+      <p class="latest-excerpt">{{ latest_carlo.content | strip_html | truncatewords: 24 }}</p>
+    </a>
+    {% endif %}
+    {% if latest_andrea %}
+    <a class="latest-card latest-andrea" href="{{ latest_andrea.url | relative_url }}">
+      <span class="badge badge-andrea">Andrea</span>
+      <h3 class="latest-title">{{ latest_andrea.title }}</h3>
+      <p class="latest-when">{{ latest_andrea.date | date: "%-d %B %Y" }}{% if latest_andrea.location %} · {{ latest_andrea.location }}{% endif %}</p>
+      <p class="latest-excerpt">{{ latest_andrea.content | strip_html | truncatewords: 24 }}</p>
+    </a>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
 {% assign days = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m-%d'" %}
 
+{% if days.size > 0 %}
+<nav class="toc" aria-label="All days">
+  <h2 class="section-heading">Table of contents</h2>
+  <ol class="toc-list">
+    {% for day in days %}
+    <li><a href="#day-{{ day.name }}">{{ day.items[0].date | date: "%-d %B %Y" }}</a> <span class="toc-count">{{ day.items.size }} post{% if day.items.size != 1 %}s{% endif %}</span></li>
+    {% endfor %}
+  </ol>
+</nav>
+{% endif %}
+
 {% for day in days %}
-<section class="day">
+<section class="day" id="day-{{ day.name }}">
   <h2 class="day-heading">{{ day.items[0].date | date: "%-d %B %Y" }}</h2>
   <ul class="post-list">
     {% for post in day.items %}

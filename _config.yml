@@ -2,6 +2,9 @@ title: Tanzania Diaries
 description: Travel updates from Arusha — text and photos, day by day.
 author: Carlo Giorgetti
 
+# Served from a project repo: https://carlogiorgio.github.io/tanzania-diaries/
+baseurl: "/tanzania-diaries"
+
 # URLs like /2026/06/15/first-day/
 permalink: /:year/:month/:day/:title/
 

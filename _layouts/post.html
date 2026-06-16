@@ -13,6 +13,11 @@ layout: default
   <img class="post-cover" src="{{ page.cover | relative_url }}" alt="{{ page.title }}" loading="lazy">
   {% endif %}
 
+  <nav class="toc post-toc" id="post-toc" hidden aria-label="In this post">
+    <h2 class="section-heading">In this post</h2>
+    <ol class="toc-list"></ol>
+  </nav>
+
   <div class="post-body">
     {{ content }}
   </div>
@@ -27,5 +32,30 @@ layout: default
   </div>
   {% endif %}
 
-  <p class="post-nav"><a href="{{ '/' | relative_url }}">← All days</a></p>
+  <p class="post-nav">
+    <a href="{{ '/' | relative_url }}">← All days</a>
+    {% if page.author %} · <a href="{{ '/' | append: page.author | downcase | append: '/' | relative_url }}">More from {{ page.author }}</a>{% endif %}
+  </p>
 </article>
+
+<script>
+(function () {
+  var body = document.querySelector('.post-body');
+  var toc = document.getElementById('post-toc');
+  if (!body || !toc) return;
+  var heads = body.querySelectorAll('h2, h3');
+  if (heads.length < 2) return;
+  var list = toc.querySelector('.toc-list');
+  heads.forEach(function (h, i) {
+    if (!h.id) h.id = 'h-' + i;
+    var li = document.createElement('li');
+    if (h.tagName === 'H3') li.className = 'toc-sub';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    list.appendChild(li);
+  });
+  toc.hidden = false;
+})();
+</script>

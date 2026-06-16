@@ -1,13 +1,13 @@
 backend:
   name: github
-  repo: CarloGiorgio/CarloGiorgio.github.io
+  repo: CarloGiorgio/tanzania-diaries
   branch: master
   # OAuth proxy (Cloudflare Worker)
   base_url: https://carlo-cms-oauth.carlogiorgio.workers.dev
 
 # Where uploaded photos are stored / how they're referenced on the site
 media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+public_folder: "/tanzania-diaries/assets/uploads"
 
 # Save drafts as you go without publishing live
 publish_mode: editorial_workflow

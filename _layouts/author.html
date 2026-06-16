@@ -1,0 +1,40 @@
+---
+layout: default
+---
+{% assign mine = site.posts | where_exp: "p", "p.author == page.author" %}
+
+<section class="author-switch">
+  <a class="switch nav-carlo{% if page.author == 'Carlo' %} active{% endif %}" href="{{ '/carlo/' | relative_url }}">Carlo</a>
+  <a class="switch nav-andrea{% if page.author == 'Andrea' %} active{% endif %}" href="{{ '/andrea/' | relative_url }}">Andrea</a>
+</section>
+
+<h1 class="author-title"><span class="badge badge-{{ page.author | slugify }}">{{ page.author }}</span> {{ mine.size }} day{% if mine.size != 1 %}s{% endif %}</h1>
+
+{% if mine.size > 0 %}
+<nav class="toc" aria-label="{{ page.author }}'s posts">
+  <ol class="toc-list">
+    {% for post in mine %}
+    <li><a href="#post-{{ post.date | date: '%Y%m%d' }}-{{ forloop.index }}">{{ post.title }}</a> <span class="toc-count">{{ post.date | date: "%-d %b" }}</span></li>
+    {% endfor %}
+  </ol>
+</nav>
+
+<ul class="post-list">
+  {% for post in mine %}
+  <li class="card" id="post-{{ post.date | date: '%Y%m%d' }}-{{ forloop.index }}">
+    <a class="card-link" href="{{ post.url | relative_url }}">
+      {% if post.cover %}
+      <img class="card-cover" src="{{ post.cover | relative_url }}" alt="" loading="lazy">
+      {% endif %}
+      <div class="card-text">
+        <h3 class="card-title">{{ post.title }}</h3>
+        <p class="card-meta">{{ post.date | date: "%-d %B %Y" }}{% if post.location %} · {{ post.location }}{% endif %}</p>
+        <p class="card-excerpt">{{ post.content | strip_html | truncatewords: 30 }}</p>
+      </div>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="empty">{{ page.author }} hasn't posted yet.</p>
+{% endif %}

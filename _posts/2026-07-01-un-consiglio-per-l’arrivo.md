@@ -14,4 +14,8 @@ Alla frontiera succede l’imprevisto.
 
 Il visto preso online è quello da turista perché era il più veloce e più facile da fare. Avevo letto che nel momento in cui chiedevano, non andasse minimamente accennato il volontariato. Prima domanda: “dove starete?”””Ad Arusha”. “Bene, dove starete?”. “Staremo qui, presso James Kissiri”. “Ok cosa è? Un hotel, qualcosa?” Andrea: “no è una casa per volontari”. Merda. Questo alla frontiera ci dice, “in che senso volontariato? Farete volontariato? Ma il visto è per turismo. Non potete entrare con questo visto.” E moh che facciamo? Provo a dire che in verità non è volontariato perché paghiamo, andiamo in giro e ci sono delle attività che però non sono obbligatorie. Non se la beve. \
 ”eh però non potete entrare così. Io vi voglio aiutare e vi posso far avere un visto per volontari però è un favore che vi posso fare. Certo servirebbe una mancia (tip) per far funzionare la procedura”. Voleva la mazzetta. \
-mi restituisce il passaporto, ci mettiamo dentro i soldi e poi fa tutto lui.
+mi restituisce il passaporto, ci mettiamo dentro i soldi e poi fa tutto lui. Vi lascio immaginare quanto possiamo aver dato.
+
+Dopo questa esperienza James ci viene a prendere con un jeepone. Ci sarà un post riguardo a questo personaggio. La strada è a una corsia, piena di camion e motorini. Gente pazza alla guida. Dopo 1 h di viaggio arriviamo alla casa. Molto carina, fatta di diversi poli e strutture abitative. Io e Andrea abbiamo una stanza solo per noi, con un bagno. Incontriamo qui anche il socio Silvio, il nostro collega di questo mese. \
+la cena è alle 20 ed è stata cucinata dalla moglie, un piatto ricco e ben servito. \
+Dopo cena siamo cappotti quindi torniamo nella nostra stanza e una volta dismessi li zaini andiamo a dormire, pronti per la nuova giornata .
